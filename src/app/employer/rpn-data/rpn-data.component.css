@@ -1,0 +1,59 @@
+/*  
+mat-row:nth-child(even){
+    background-color:dimgray;
+    }
+
+mat-row:nth-child(odd){
+    background-color:darkgray;
+    } */
+
+    .highlight{
+        background: #42A948; /* green */
+    }
+
+    .mat-cell, .mat-header-cell {
+        flex: 1;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        color: #000;
+    }
+
+    .mat-table{
+        background:white;
+        color: rgb(32, 167, 167);
+        overflow: auto;
+        max-height: 300px;
+        min-width: 250px;
+    }
+
+    .mat-header-row {
+        position: sticky;
+        top: 0;
+        background: white;
+    }
+
+    .title-text-inside-grid{
+        color: rgb(32, 167, 167);
+        font-size: 11px;
+    }
+
+    .content-text-inside-grid {
+        color: black;        
+        font-size: 11px;
+      } 
+
+    .fill-remaining-space {
+        /* This fills the remaining space, by using flexbox. 
+           Every toolbar row uses a flexbox row layout. */
+        flex: 1 1 auto;
+    }
+
+    .mat-header-cell{
+        font-size: 12px;
+    }
+
+
+
+
+    

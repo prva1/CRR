@@ -1,0 +1,24 @@
+.mat-expansion-panel-header {
+ background-color: rgb(32, 167, 167);
+ border-collapse: collapse;
+ color: white;
+ font-size: 14px;
+}
+
+.mat-app-background{
+  background-color: rgb(209, 219, 219);
+
+}
+
+.my-headers-align .mat-expansion-panel-header-title, 
+.my-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+

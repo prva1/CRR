@@ -1,0 +1,24 @@
+
+  <mat-table [dataSource]="dataSource" >
+
+      <ng-container matColumnDef="tittle">
+        <mat-header-cell *matHeaderCellDef> <strong> RPN data </strong> </mat-header-cell>
+        <mat-cell *matCellDef="let feature"> 
+          
+          <div  class="title-text-inside-grid" fxLayout="row" fxLayoutAlign="space-between stretch">
+              <strong> {{ feature.tittle }} </strong>
+               <br>
+              
+                <div class="content-text-inside-grid"> {{ feature.number }} 
+                    <span class="fill-remaining-space">    {{ feature.date }}   </span>        
+                </div>   
+  
+          </div>            
+  
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{'highlight': selectedRowIndex == row.tittle}" (click)="highlight(row)"></mat-row>
+  
+    </mat-table>

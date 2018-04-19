@@ -1,0 +1,26 @@
+
+  <mat-table [dataSource]="dataSource" fxLayout="row"
+   fxLayoutAlign="space-between stretch">
+
+    <ng-container matColumnDef="tittle">
+      <mat-header-cell *matHeaderCellDef> <strong> Payroll Submissions </strong> </mat-header-cell>
+      <mat-cell *matCellDef="let feature" > 
+        
+        <div  class="title-text-inside-grid" >
+            <strong> {{ feature.tittle }} </strong>  
+           
+             <br>
+            
+              <div class="content-text-inside-grid"> {{ feature.number }} 
+                  <span class="fill-remaining-space"> </span>   {{ feature.date }}         
+              </div>   
+
+        </div>            
+
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{'highlight': selectedRowIndex == row.tittle}" (click)="highlight(row)"></mat-row>
+
+  </mat-table>

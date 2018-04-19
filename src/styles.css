@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.mdl-layout__header {
+    background:  rgb(17, 92, 92);
+    color: #fff;
+} 
+.mdl-layout__header .mdl-navigation .mdl-navigation__link:hover .mdl-layout--fixed-header{
+   color:white;
+}
+
+

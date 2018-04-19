@@ -1,0 +1,38 @@
+/* 
+.mat-card-title{
+    text-align: right;
+} */
+
+/* .md-toolbar{
+    height: 5px !important;
+    min-height: 5px !important;
+  } */
+
+.mat-card{
+    background-color: rgb(209, 219, 219);
+    color: white;
+   /* margin:2em;*/
+
+}
+
+.mat-card-title{
+    text-align: right;
+}
+
+.mat-toolbar{
+    background: rgb(114, 111, 114);
+    color: white;
+    font-size: 14px;
+   
+}
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+
+
+  .search{
+    align-self: flex-end;
+  }

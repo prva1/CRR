@@ -1,0 +1,32 @@
+
+<table  style="width:100%"> 
+
+<mat-card>
+  
+  <mat-card-title></mat-card-title>
+  <mat-card-header></mat-card-header>
+
+<mat-card-content> 
+        <td class="icon"><i class="material-icons">account_circle</i></td>
+    <mat-grid-list cols="4" rowHeight="13px" >
+     
+            <mat-grid-tile        
+                *ngFor="let tile of tiles"
+                [colspan]="tile.cols"
+                [rowspan]="tile.rows"
+                [style.background]="tile.color"
+                fxLayout="row" fxLayoutAlign="space-between stretch">
+
+                <span ><div class="title-text-inside-grid"> <strong> {{tile.text}} </strong> </div></span>
+                <span ><div class="content-text-inside-grid"> {{tile.content}} </div></span>            
+                <span class="fill-remaining-space"></span>
+            
+            </mat-grid-tile>
+
+      </mat-grid-list>
+
+
+</mat-card-content>
+</mat-card>
+
+</table>
