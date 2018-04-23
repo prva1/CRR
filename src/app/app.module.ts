@@ -10,8 +10,6 @@ import { ServicesModule } from './services.module';
 // Component
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header/header.component';
-import { FooterComponent } from './footer/footer/footer.component';
 import { CustomerDetailComponent } from './customer/customer-detail/customer-detail.component';
 import { PpsnComponent } from './userCard/ppsn/ppsn.component';
 
@@ -21,7 +19,6 @@ import { UserdetailsService } from './services/UserdetailService/userdetails.ser
 import { UserstatusSubHeaderComponent } from './user-status-sub-header/userstatus-sub-header/userstatus-sub-header.component';
 import { SearchComponent } from './search/search/search.component';
 import { UserContactComponent } from './userCard/user-contact/user-contact.component';
-import { RecentComponent } from './comunication/recent/recent.component';
 import { PayrollSubmissionsComponent } from './employer/payroll-submissions/payroll-submissions.component';
 import { RpnDataComponent } from './employer/rpn-data/rpn-data.component';
 import { PendingReturnComponent } from './employer/pending-return/pending-return.component';
@@ -29,37 +26,35 @@ import { StatementOfAccountComponent } from './employer/statement-of-account/sta
 import { RecentCommunicationComponent } from './comunication/recent-communication/recent-communication.component';
 import { EmployerServicesComponent } from './employer/employer-services/employer-services.component';
 import { EmployerFeatureService } from './services/employerFeature/employer-feature.service';
-import { MatFormFieldModule } from '@angular/material';
-
-
+//import { MatFormFieldModule } from '@angular/material';
+import { RecentCommunicationTableComponent } from './comunication/recent-communication-table/recent-communication-table.component';
+import { RecentCommunicationService } from './services/recent-Communication/recent-communication.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
     CustomerDetailComponent,
     PpsnComponent,
     UserstatusSubHeaderComponent,
     SearchComponent,
     UserContactComponent,
-    RecentComponent,
     PayrollSubmissionsComponent,
     RpnDataComponent,
     PendingReturnComponent,
     StatementOfAccountComponent,
     RecentCommunicationComponent,
     EmployerServicesComponent,
+    RecentCommunicationTableComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ServicesModule,
-    MatFormFieldModule,
+    ServicesModule
   ],
-  providers: [UserdetailsService, EmployerFeatureService],
+  providers: [UserdetailsService, EmployerFeatureService, RecentCommunicationService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

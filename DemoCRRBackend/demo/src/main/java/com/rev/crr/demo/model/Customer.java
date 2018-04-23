@@ -161,7 +161,7 @@ public class Customer implements Serializable {
 
   @Override
   public String toString() {
-    return "Customer{" +
+    return "CustomerController{" +
       "ppsn='" + ppsn + '\'' +
       ", stateDescription='" + stateDescription + '\'' +
       ", nameUser='" + nameUser + '\'' +

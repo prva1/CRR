@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+
+ confirmationDialog() {
+  console.log(">>>>>cerrar");
+  window.top.close();
+    
+ }
+
 }
+
+

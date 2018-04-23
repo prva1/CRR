@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
-import { MatFormFieldModule,MatExpansionModule,MatCardModule,MatGridListModule,MatToolbarModule,MatButtonModule,MatTableModule  } from '@angular/material';
+import { MatExpansionModule,MatCardModule,MatGridListModule,MatToolbarModule,MatButtonModule,MatTableModule,MatTabsModule  } from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 //
 
@@ -15,8 +18,8 @@ import { MdSliderModule } from '@angular2-material/slider'; */
 //import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-imports:[MatExpansionModule,MatCardModule,MatToolbarModule,MatGridListModule,MatTableModule ,MatButtonModule,MatFormFieldModule],
-exports:[MatExpansionModule,MatCardModule,MatToolbarModule,MatGridListModule,MatTableModule, MatButtonModule,MatFormFieldModule ]
+imports:[MatExpansionModule,MatCardModule,MatToolbarModule,MatGridListModule,MatTableModule ,MatButtonModule,MatFormFieldModule, MatTabsModule, MatSelectModule, MatInputModule] ,
+exports:[MatExpansionModule,MatCardModule,MatToolbarModule,MatGridListModule,MatTableModule, MatButtonModule,MatFormFieldModule, MatTabsModule, MatSelectModule, MatInputModule ]
 })
 
 export class MaterialModule {

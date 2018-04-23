@@ -15,15 +15,12 @@ import { SubServiceCategoryEnum } from '../../utility/subServiceCategoryEnum';
 export class PayrollSubmissionsComponent implements OnInit {
 
   public dataSource = new UserDataSource(this.employerFeatureService);
-
   public displayedColumns = ['tittle'];
-
   constructor(private employerFeatureService: EmployerFeatureService) { }
+  selectedRowIndex: number = -1;
 
   ngOnInit() {
   }
-
-  selectedRowIndex: number = -1;
 
   highlight(row) {
     this.selectedRowIndex = row.tittle;
@@ -50,4 +47,3 @@ export class UserDataSource extends DataSource<any>{
   disconnect() { }
 
 }
-

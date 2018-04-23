@@ -5,19 +5,20 @@ import { DataSource } from "@angular/cdk/collections";
 import { EmployerFeatureService } from '../../services/employerFeature/employer-feature.service';
 import { User } from '../../model/user.model';
 import { Feature } from '../../model/feature.model';
-import { SubServiceCategoryEnum } from '../../utility/subServiceCategoryEnum';
+import { RecentCommunicationService } from '../../services/recent-Communication/recent-communication.service';
 
 @Component({
-  selector: 'app-rpn-data',
-  templateUrl: './rpn-data.component.html',
-  styleUrls: ['./rpn-data.component.css']
+  selector: 'app-recent-communication-table',
+  templateUrl: './recent-communication-table.component.html',
+  styleUrls: ['./recent-communication-table.component.css']
 })
-export class RpnDataComponent  implements OnInit {
+export class RecentCommunicationTableComponent implements OnInit {
 
-  public dataSource = new UserDataSource(this.employerFeatureService);
-  public displayedColumns = ['tittle'];
-  constructor(private employerFeatureService: EmployerFeatureService) { }
+  public displayedColumns = ['tittle','date'];
+  public dataSource = new UserDataSource(this.recentCommunicationService);
   selectedRowIndex: number = -1;
+
+  constructor(private recentCommunicationService:RecentCommunicationService) { }
 
   ngOnInit() {
   }
@@ -29,21 +30,21 @@ export class RpnDataComponent  implements OnInit {
 
 export class UserDataSource extends DataSource<any>{
 
-  constructor(private employerFeatureService: EmployerFeatureService) {
+  constructor(private recentCommunicationService:RecentCommunicationService) {
     super();
   }
 
   _getArray: Feature[];
 
   connect(): Observable<Feature[]> {
-    this.employerFeatureService.getEmployerFeature(SubServiceCategoryEnum.RPN_Data)
+    this.recentCommunicationService.getRecentCommunication()
       .subscribe(resultArray => this._getArray = resultArray,
         error => console.log("Error :: " + error)
       )
-    return this.employerFeatureService.getEmployerFeature(SubServiceCategoryEnum.RPN_Data);
+    return this.recentCommunicationService.getRecentCommunication();
 
   }
 
   disconnect() { }
-}
 
+}

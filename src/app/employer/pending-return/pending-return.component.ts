@@ -13,16 +13,14 @@ import { SubServiceCategoryEnum } from '../../utility/subServiceCategoryEnum';
   styleUrls: ['./pending-return.component.css']
 })
 export class PendingReturnComponent implements OnInit {
+
   public dataSource = new UserDataSource(this.employerFeatureService);
-
   public displayedColumns = ['tittle'];
-
   constructor(private employerFeatureService: EmployerFeatureService) { }
+  selectedRowIndex: number = -1;
 
   ngOnInit() {
   }
-
-  selectedRowIndex: number = -1;
 
   highlight(row) {
     this.selectedRowIndex = row.tittle;
@@ -48,6 +46,5 @@ export class UserDataSource extends DataSource<any>{
   }
 
   disconnect() { }
-
 }
 

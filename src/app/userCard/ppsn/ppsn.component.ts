@@ -5,6 +5,7 @@ import { User } from '../../model/user.model';
 import { ReturnStatement } from '@angular/compiler';
 import { SubServiceCategoryEnum } from '../../utility/subServiceCategoryEnum';
 
+
 @Component({
   selector: 'app-ppsn',
   templateUrl: './ppsn.component.html',
@@ -13,7 +14,7 @@ import { SubServiceCategoryEnum } from '../../utility/subServiceCategoryEnum';
 export class PpsnComponent implements OnInit {
 
   tiles = [
-    { text: '', content: '', cols: 0, rows: 10, color: 'white'},
+    { text: '', content: '', cols: 0, rows: 10, color: 'white' },
     { text: 'Name: ', content: '', cols: 3, rows: 1, color: 'white' },
     { text: 'Address: ', content: '', cols: 3, rows: 1, color: 'white' },
     { text: '', content: '', cols: 3, rows: 1, color: 'white' },
@@ -24,20 +25,38 @@ export class PpsnComponent implements OnInit {
     { text: 'Outstanding return: ', content: '', cols: 3, rows: 1, color: 'white' },
     { text: 'Customer balance: ', content: '', cols: 3, rows: 1, color: 'white' },
   ];
-  
-  private nameUser:string;
-  private address:string;
-  private casesize:string;
-  private tier:string;
-  private district:string;
-  private outstandingReturn:string;
-  private customerBalance:string;
+
+  private nameUser: string;
+  private address: string;
+  private casesize: string;
+  private tier: string;
+  private district: string;
+  private outstandingReturn: string;
+  private customerBalance: string;
+
+  constructor(private userdetailsService: UserdetailsService) { }
+
+  ngOnInit() {
+
+    this.userdetailsService.getUserDetails("8107760A").subscribe(data => {
+
+      this.tiles[1].content = this.nameUser = data.nameUser;
+      this.tiles[2].content = this.address = data.address;
+      this.tiles[4].content = this.casesize = data.casesize;
+      this.tiles[5].content = this.tier = data.tier;
+      this.tiles[6].content = this.district = data.district;
+      this.tiles[8].content = this.outstandingReturn = data.outstandingReturn;
+      this.tiles[9].content = this.customerBalance = data.customerBalance;
+
+    }
+    );
+  }
 
   public getnameUser() {
     return this.nameUser;
   }
 
-  public setnameUser(nameUser:string) {
+  public setnameUser(nameUser: string) {
     this.nameUser = nameUser;
   }
 
@@ -45,7 +64,7 @@ export class PpsnComponent implements OnInit {
     return this.address;
   }
 
-  public setaddress(address:string) {
+  public setaddress(address: string) {
     this.address = address;
   }
 
@@ -53,7 +72,7 @@ export class PpsnComponent implements OnInit {
     return this.casesize;
   }
 
-  public setcasesize(casesize:string) {
+  public setcasesize(casesize: string) {
     this.casesize = casesize;
   }
 
@@ -61,7 +80,7 @@ export class PpsnComponent implements OnInit {
     return this.tier;
   }
 
-  public settier(tier:string) {
+  public settier(tier: string) {
     this.tier = tier;
   }
 
@@ -69,7 +88,7 @@ export class PpsnComponent implements OnInit {
     return this.district;
   }
 
-  public setdistrict(district:string) {
+  public setdistrict(district: string) {
     this.district = district;
   }
 
@@ -77,34 +96,16 @@ export class PpsnComponent implements OnInit {
     return this.outstandingReturn;
   }
 
-  public setoutstandingReturn(outstandingReturn:string) {
+  public setoutstandingReturn(outstandingReturn: string) {
     this.outstandingReturn = outstandingReturn;
   }
- 
+
   public getcustomerBalance() {
     return this.customerBalance;
   }
 
-  public setcustomerBalance(customerBalance:string) {
+  public setcustomerBalance(customerBalance: string) {
     this.customerBalance = customerBalance;
-  }
-
-  constructor(private userdetailsService:UserdetailsService) {   }
-
-  ngOnInit() {    
-
-    this.userdetailsService.getUserDetails("8107760A").subscribe( data => {
-
-        this.tiles[1].content = this.nameUser = data.nameUser;        
-        this.tiles[2].content = this.address = data.address;
-        this.tiles[4].content = this.casesize = data.casesize;
-        this.tiles[5].content = this.tier = data.tier;
-        this.tiles[6].content = this.district = data.district;
-        this.tiles[8].content = this.outstandingReturn = data.outstandingReturn;
-        this.tiles[9].content = this.customerBalance = data.customerBalance;
-
-      }
-    );
   }
 
 }

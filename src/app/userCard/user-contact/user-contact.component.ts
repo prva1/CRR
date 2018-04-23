@@ -22,13 +22,26 @@ export class UserContactComponent  implements OnInit {
     { text: '', content: '', cols: 3, rows: 1, color: 'white' },
     { text: '', content: '', cols: 3, rows: 1, color: 'white' },
     { text: '', content: '', cols: 3, rows: 1, color: 'white' },
-  ];   
-  
+  ];     
 
   private lastContactDate:string;
   private lastContactReason:string;
   private timeOncall:string;
   
+
+  constructor(private userdetailsService:UserdetailsService) {  }
+
+  ngOnInit() {
+
+    this.userdetailsService.getUserDetails("8107760A").subscribe( data => {
+        this.tiles[1].content = this.lastContactDate = data.lastContactReason;        
+        this.tiles[2].content = this.lastContactReason = data.lastContactReason;
+        this.tiles[3].content = this.timeOncall = data.timeOncall;
+      }
+    );
+  }
+
+
   public getlastContactDate (){
     return this.lastContactDate;
   }
@@ -51,18 +64,6 @@ export class UserContactComponent  implements OnInit {
 
   public settimeOncall(timeOncall:string){
     this.timeOncall = timeOncall;
-  }
-
-  constructor(private userdetailsService:UserdetailsService) {  }
-
-  ngOnInit() {
-
-    this.userdetailsService.getUserDetails("8107760A").subscribe( data => {
-        this.tiles[1].content = this.lastContactDate = data.lastContactReason;        
-        this.tiles[2].content = this.lastContactReason = data.lastContactReason;
-        this.tiles[3].content = this.timeOncall = data.timeOncall;
-      }
-    );
   }
 
 }

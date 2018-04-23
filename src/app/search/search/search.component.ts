@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  // TODO - to be used in what model Domain?
+
   constructor() { }
 
   ngOnInit() {
