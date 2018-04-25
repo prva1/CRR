@@ -6,6 +6,43 @@ mat-row:nth-child(even){
 mat-row:nth-child(odd){
     background-color:darkgray;
     } */
+    .mat-input-underline{
+        border-bottom: 1px solid red!important;
+    }
+
+    .mat-input-container {
+    font-size: 14px;
+    flex-grow: 1;
+    margin-left: 32px;
+    margin-top: 8px;
+    
+    }
+
+    .example-container {
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+      }
+
+      .example-header {
+        min-height: 56px;
+        max-height: 56px;
+        display: flex;
+        align-items: center;
+        padding: 8px 24px 0;
+        font-size: 20px;
+        justify-content: space-between;
+        border-bottom: 10px solid transparent;
+      }
+
+      .mat-input-container {
+        font-size: 14px;
+        flex-grow: 1;
+        margin-left: 32px;
+        margin-top: 8px;
+        margin-bottom: 50px;
+        border-bottom: 5px;
+      }
 
     .highlight{
         background: #42A948; /* green */
@@ -26,6 +63,10 @@ mat-row:nth-child(odd){
         overflow: auto;
         max-height: 300px;
         min-width: 250px;
+    }
+
+    .example-container {
+        display: flex;
     }
 
     .mat-header-row {
@@ -56,6 +97,15 @@ mat-row:nth-child(odd){
     }
 
 
-
+    .inputSearch-header {
+        min-height: 56px;
+        max-height: 56px;
+        display: flex;
+        align-items: center;
+        padding: 8px 24px 0;
+        font-size: 20px;
+        justify-content: space-between;
+        border-bottom: 1px solid transparent;
+      }
 
     

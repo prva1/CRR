@@ -55,6 +55,34 @@ private List<Communication> recentCommunicationList= new ArrayList<Communication
     recentCommunicationList.add(new Communication("Recent Communication: AIM","40001070805","05/01/2018"));
     recentCommunicationList.add(new Communication("Recent Communication: Customer Notes","888665304","06/12/2017"));
     recentCommunicationList.add(new Communication("Recent Communication: I.C","6786524930","28/11/2017"));
+
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 1","40001070812","05/02/2018"));
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 2","888665312","07/12/2017"));
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 3","6786524912","28/12/2017"));
+
+    recentCommunicationList.add(new Communication("Recent Communication: AIM","40001070805","05/01/2018"));
+    recentCommunicationList.add(new Communication("Recent Communication: Customer Notes","888665304","06/12/2017"));
+    recentCommunicationList.add(new Communication("Recent Communication: I.C","6786524930","28/11/2017"));
+
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 1","40001070812","05/02/2018"));
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 2","888665312","07/12/2017"));
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 3","6786524912","28/12/2017"));
+
+    recentCommunicationList.add(new Communication("Recent Communication: AIM","40001070805","05/01/2018"));
+    recentCommunicationList.add(new Communication("Recent Communication: Customer Notes","888665304","06/12/2017"));
+    recentCommunicationList.add(new Communication("Recent Communication: I.C","6786524930","28/11/2017"));
+
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 1","40001070812","05/02/2018"));
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 2","888665312","07/12/2017"));
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 3","6786524912","28/12/2017"));
+
+    recentCommunicationList.add(new Communication("Recent Communication: AIM","40001070805","05/01/2018"));
+    recentCommunicationList.add(new Communication("Recent Communication: Customer Notes","888665304","06/12/2017"));
+    recentCommunicationList.add(new Communication("Recent Communication: I.C","6786524930","28/11/2017"));
+
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 1","40001070812","05/02/2018"));
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 2","888665312","07/12/2017"));
+    recentCommunicationList.add(new Communication("Recent Communication: TEST 3","6786524912","28/12/2017"));
   }
 
 

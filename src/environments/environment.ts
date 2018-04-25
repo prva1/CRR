@@ -5,7 +5,7 @@
 
 export const environment = {
 
-  production: true,
+  production: false,
 
   EMPLOYER_FEATURE_URL:'http://localhost:8080/EmployerController/getEmployerServices?ppsn=8107760A&opt=',
 

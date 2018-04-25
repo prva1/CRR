@@ -1,58 +1,69 @@
+<div class="example-container mat-elevation-z8">
 
-<!--The content below is only a placeholder and can be replaced.-->
+<!--------------------------- Search engine ------------------------- -->
 
-<!--  <div>
-  <mat-form-field>
-  <mat-select [(value)]="filter.field">
-    <mat-option>None</mat-option>
-    <mat-option value="communicationDate">Date</mat-option>
-  </mat-select>
-</mat-form-field>
+<div class="example-header">
+  <mat-input-container floatPlaceholder="never">
+    <input matInput #filter placeholder="Filter communication">
+  </mat-input-container>
+  
+</div>
 
-<mat-form-field>
-  <mat-select [(value)]="filter.criteria">
-    <mat-option value=">" *ngIf="filter.field == 'communicationDate'">Greater than</mat-option>
-    <mat-option value="<" *ngIf="filter.field == 'communicationDate'">Lesser than</mat-option>
-    <mat-option value="==">Equals</mat-option>
-  </mat-select>
-</mat-form-field>
-
-<mat-form-field>
-    <input matInput placeholder="Value" [(ngModel)]="filter.filtervalue">
-</mat-form-field>
-
-<button mat-raised-button (click)="filterData()" color="primary">Filter now</button>
-<button mat-raised-button (click)="resetFilters()" color="primary">Reset Filters</button>
-
-</div> -->
-
+<!--------------------------- Main Table ---------------------------- -->
 
 <mat-table #table [dataSource]="dataSource" matSort>
 
-    <ng-container matColumnDef="tittle">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-      <mat-cell *matCellDef="let feature" > 
-        
-        <div  class="title-text-inside-grid" >
-            <strong> {{ feature.tittle }} </strong>  
-           
-             <br>
-            
-              <div class="content-text-inside-grid"> {{ feature.number }} 
-              </div>   
 
-        </div>            
+  <!--------------------------- Tittle Column ------------------------ -->
 
-      </mat-cell>
-    </ng-container>
-    
-        <!-- Date Column -->
-    <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-        <mat-cell *matCellDef="let feature"><span class="fill-remaining-space"> </span>  {{feature.date}} </mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="tittle">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> <strong> Communications </strong> </mat-header-cell>
+    <mat-cell *matCellDef="let feature">
+      <div class="title-text-inside-grid">
+        <strong> {{ feature.tittle }} </strong>
+        <br>
+        <div class="content-text-inside-grid"> {{ feature.number }} </div>
+      </div>
+    </mat-cell>
+  </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{'highlight': selectedRowIndex == row.tittle}" (click)="highlight(row)"></mat-row>
+  <!--------------------------- Number Column ---------------------------- -->
 
-  </mat-table>
+  <ng-container matColumnDef="number">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+    <mat-cell *matCellDef="let feature">
+      <div class="title-text-inside-grid">    
+      </div>
+    </mat-cell>
+  </ng-container>
+
+
+  <!--------------------------- Date Column ---------------------------- -->
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef mat-sort-header><strong>  Date </strong></mat-header-cell>
+    <mat-cell *matCellDef="let feature">
+       {{ feature.date }} </mat-cell>
+  </ng-container>
+
+
+  <!--------------------------- DisplayedColumns & HighLigth ------------ -->
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+  <mat-row *matRowDef="let feature; columns: displayedColumns" [ngClass]="{'highlight': selectedRowIndex == feature.date}"
+    (click)="highlight(feature)">
+  </mat-row>
+
+</mat-table>
+
+
+<!--------------------------- Pagination ---------------------------- -->
+
+<mat-paginator #paginator  
+        [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        [showFirstLastButtons]="true">
+</mat-paginator>
+
+</div>

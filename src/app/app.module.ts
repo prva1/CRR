@@ -29,6 +29,10 @@ import { EmployerFeatureService } from './services/employerFeature/employer-feat
 //import { MatFormFieldModule } from '@angular/material';
 import { RecentCommunicationTableComponent } from './comunication/recent-communication-table/recent-communication-table.component';
 import { RecentCommunicationService } from './services/recent-Communication/recent-communication.service';
+import { CdkTableModule } from '@angular/cdk/table';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatSortModule } from '@angular/material';
 
 
 @NgModule({
@@ -46,12 +50,19 @@ import { RecentCommunicationService } from './services/recent-Communication/rece
     RecentCommunicationComponent,
     EmployerServicesComponent,
     RecentCommunicationTableComponent,
+  
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ServicesModule
+    ServicesModule,
+    CdkTableModule,
+    NgxPaginationModule,
+    MatSortModule
+  ],
+  exports: [
+    CdkTableModule
   ],
   providers: [UserdetailsService, EmployerFeatureService, RecentCommunicationService],
   
