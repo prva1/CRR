@@ -6,15 +6,12 @@ mat-row:nth-child(even){
 mat-row:nth-child(odd){
     background-color:darkgray;
     } */
-    .mat-input-underline{
-        border-bottom: 1px solid red!important;
-    }
 
     .mat-input-container {
     font-size: 14px;
     flex-grow: 1;
     margin-left: 32px;
-    margin-top: 8px;
+    margin-top: 30px;
     
     }
 
@@ -29,10 +26,11 @@ mat-row:nth-child(odd){
         max-height: 56px;
         display: flex;
         align-items: center;
-        padding: 8px 24px 0;
+        padding: 40px 4px 0;
         font-size: 20px;
         justify-content: space-between;
         border-bottom: 10px solid transparent;
+        border-top: 30px;
       }
 
       .mat-input-container {

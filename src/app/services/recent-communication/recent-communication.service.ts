@@ -11,7 +11,6 @@ let LOGS = console.log;
 
 @Injectable()
 export class RecentCommunicationService {
-
     constructor(private http: Http) { }
 
     getRecentCommunication(): Observable<Feature[]> {
