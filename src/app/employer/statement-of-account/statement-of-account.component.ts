@@ -1,10 +1,21 @@
+
+/** 
+ * Component in change to pull rpn data from the service component
+ */
+
 import { Component, OnInit } from '@angular/core';
 
+// ReactiveX and Datasource
 import { Observable } from "rxjs/Observable";
 import { DataSource } from "@angular/cdk/collections";
+
+// Service in charge to provide payroll submission using opt=4
 import { EmployerFeatureService } from '../../services/employerFeature/employer-feature.service';
-import { User } from '../../model/user.model';
+
+// JSON modle with a generic structure
 import { Feature } from '../../model/feature.model';
+
+// Enum constant
 import { SubServiceCategoryEnum } from '../../utility/subServiceCategoryEnum';
 
 @Component({
@@ -14,36 +25,40 @@ import { SubServiceCategoryEnum } from '../../utility/subServiceCategoryEnum';
 })
 export class StatementOfAccountComponent implements OnInit {
 
-  public dataSource = new UserDataSource(this.employerFeatureService);
+  public dataSource = new FeatureDataSource(this.employerFeatureService);
+
+  // List of colums needed to be linked with the render html 
   public displayedColumns = ['tittle'];
-  constructor(private employerFeatureService: EmployerFeatureService) { }
+
+  // Value for selected and unselected highlight row.
   selectedRowIndex: number = -1;
 
+  constructor(private employerFeatureService: EmployerFeatureService) { }
+
+  // Callback method
   ngOnInit() {
   }
 
+  // highlight selected row for the rendered table
   highlight(row) {
     this.selectedRowIndex = row.tittle;
   }
 }
 
-export class UserDataSource extends DataSource<any>{
+// Customized datasource
+export class FeatureDataSource extends DataSource<Feature>{
 
   constructor(private employerFeatureService: EmployerFeatureService) {
     super();
   }
 
-  _getArray: Feature[];
-
   connect(): Observable<Feature[]> {
     this.employerFeatureService.getEmployerFeature(SubServiceCategoryEnum.STATEMENT_Of_ACCOUNT)
-      .subscribe(resultArray => this._getArray = resultArray,
+      .subscribe(resultArray => resultArray,
         error => console.log("Error :: " + error)
       )
     return this.employerFeatureService.getEmployerFeature(SubServiceCategoryEnum.STATEMENT_Of_ACCOUNT);
-
   }
 
   disconnect() { }
-
 }

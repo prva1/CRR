@@ -8,9 +8,9 @@ describe('RecentCommunicationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecentCommunicationComponent ]
+      declarations: [RecentCommunicationComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,7 @@
 { "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
+    // Change soutceMap to true so you can use debugger and see you json data
     "sourceMap": false,
     "declaration": false,
     "moduleResolution": "node",

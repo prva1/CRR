@@ -10,18 +10,13 @@
     color: rgb(32, 167, 167);
     font-size: 11px;
 }
-/* .mat-card-title{
-    text-align: right;
-} */
+.content-text-inside-grid {
+    color: black;
+    font-size: 11px;
+ } 
 
-  .content-text-inside-grid {
-        color: black;
-        font-size: 11px;
-  } 
-
-
-  .fill-remaining-space {
-    /* This fills the remaining space, by using flexbox. 
-       Every toolbar row uses a flexbox row layout. */
+.fill-remaining-space {
+   /* This fills the remaining space, by using flexbox. 
+    Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
-  }
+ }

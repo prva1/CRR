@@ -1,3 +1,6 @@
+
+/* Component container for recent comunication component. it is a panel can be extended. */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +12,6 @@ export class RecentCommunicationComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

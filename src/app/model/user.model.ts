@@ -1,6 +1,3 @@
-
-// TODO - it is not used yet. 
-
 export interface User {
     // Header
     ppsn: string;

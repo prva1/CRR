@@ -1,11 +1,11 @@
 <table style="width:90%" align="center">
 
   <mat-toolbar fxLayout="row" fxLayoutAlign="space-between stretch">
-   
-      <td class="icon">
-        <i class="material-icons">account_circle</i>
-      </td> {{ppsn}}
-    
+
+    <td class="icon">
+      <i class="material-icons">account_circle</i>
+    </td> {{ppsn}}
+
 
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
@@ -13,11 +13,17 @@
 
   </mat-toolbar>
 
-  <mat-card class="mat-elevation-z0" >
+  <mat-card class="mat-elevation-z0">
 
     <!-- content... -->
-    <table  align="right">
-      <div class="search"><app-search></app-search></div>
-  </table>
+    <table align="right">
+
+      <div class="search">
+        <!--   Custome tag app-search -->
+        <app-search></app-search>
+      </div>
+
+    </table>
+
   </mat-card>
 </table>

@@ -1,7 +1,8 @@
+/* 
+Component used to show the main header and render the data from the stud service CustomerDetails */
+
 import { Component, OnInit } from '@angular/core';
 import { UserdetailsService } from '../../services/UserdetailService/userdetails.service';
-import { User } from '../../model/user.model';
-import { ReturnStatement } from '@angular/compiler';
 import { SearchComponent } from "../../search/search/search.component";
 
 @Component({
@@ -40,7 +41,6 @@ export class UserstatusSubHeaderComponent implements OnInit {
   public setstateDescription(stateDescription: string) {
     return this.stateDescription = stateDescription;
   }
-
 
 }
 

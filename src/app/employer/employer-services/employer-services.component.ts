@@ -1,3 +1,12 @@
+
+/* 
+Component container the type of extention panel for:
+payroll Submission component,
+pending returns component,
+rpn data,
+statement of account
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +18,6 @@ export class EmployerServicesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

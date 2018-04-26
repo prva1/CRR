@@ -8,9 +8,9 @@ describe('RpnDataComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RpnDataComponent ]
+      declarations: [RpnDataComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

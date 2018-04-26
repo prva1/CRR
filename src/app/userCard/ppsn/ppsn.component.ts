@@ -1,10 +1,14 @@
+/* Left Card component in section Customer details to show:
+Name,
+AddressCase size,
+Tier,
+District,
+Outstanding return,
+Customer balance, */
+
 import { Component, OnInit, Input } from '@angular/core';
 import { UserdetailsService } from '../../services/UserdetailService/userdetails.service';
-
-import { User } from '../../model/user.model';
-import { ReturnStatement } from '@angular/compiler';
 import { SubServiceCategoryEnum } from '../../utility/subServiceCategoryEnum';
-
 
 @Component({
   selector: 'app-ppsn',

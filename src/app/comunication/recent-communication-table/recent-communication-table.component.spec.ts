@@ -8,7 +8,7 @@ describe('RecentCommunicationTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecentCommunicationTableComponent ]
+      declarations:/*  */ [ RecentCommunicationTableComponent ]
     })
     .compileComponents();
   }));
